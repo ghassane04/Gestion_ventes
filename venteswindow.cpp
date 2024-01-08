@@ -68,7 +68,7 @@ void VentesWindow::on_b_vente_clicked()
             query=this->parent->getDatabase()->getDB().exec("select quantite from stock where idProduit='"+QString::number(produitID)+"'");
             if(!query.next() || query.value(0).toInt()<quantite)
             {
-                QMessageBox::critical(this,"Ventes","le stock ne contient pas le produit ou la quantité est insuffisante!");
+                QMessageBox::critical(this,"Ventes","le stock ne contient pas le produit ou la quantite est insuffisante!");
                 return;
             }
             query=this->parent->getDatabase()->getDB().exec("select * from ventes where idClient='"+QString::number(clientID)+"' and idProduit='"+QString::number(produitID)+"'");

@@ -64,5 +64,5 @@ void ProduitsWindow::on_pushButton_clicked()
                                                     ui->i_prix->text()+"','"+
                                                     QString::number(CatID)+"')");
     parent->setLastDateModified();
-    QMessageBox::information(this,"Produits","Produit Ajouté!");
+    QMessageBox::information(this,"Produits","Produit Ajoute!");
 }

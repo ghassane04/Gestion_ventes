@@ -46,7 +46,7 @@ void AchatsWindow::on_b_ajouter_clicked()
                 query=parent->getDatabase()->getDB().exec("insert into stock(idProduit,quantite) values('"+QString::number(produitID)+"','"+QString::number(quantite)+"')");
             }
             this->parent->setLastDateModified();
-            QMessageBox::information(this,"Achat","Produit ajouté!");
+            QMessageBox::information(this,"Achat","Produit ajoute!");
         }
         else
         {

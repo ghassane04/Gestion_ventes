@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if(!m_conf->confFileExists())
     {
         QString dbPath=QFileDialog::getOpenFileName(this,tr("Ouvrir Fichier"),
-                                                    "./",tr("Fichier de données (*.db)"));
+                                                    "./",tr("Fichier de donnees (*.db)"));
         m_conf->setDBPath(dbPath);
         m_conf->writeConfigFile();
     }
@@ -28,8 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     m_db = new Database(m_conf->getDBPath());
     if(!m_db->isDBOpen())
     {
-        QMessageBox::critical(this,"Base de Données",
-                              "Impossible d'ouvrir la base de données!");
+        QMessageBox::critical(this,"Base de Donnees",
+                              "Impossible d'ouvrir la base de donnees!");
         exit(m_db->isDBOpen());
     }
 
@@ -47,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
         exit(0);
     }
 
-    ui->dbStatus->setText(username+" Connecté!");
+    ui->dbStatus->setText(username+" Connecte!");
     ui->dbStatus->setStyleSheet("QLabel{color:green;}");
     ui->lastModification->setText(this->getLastDateModified());
 }

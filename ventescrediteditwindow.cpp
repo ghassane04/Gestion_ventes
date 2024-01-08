@@ -62,7 +62,7 @@ void VentesCreditEditWindow::on_i_produit_currentIndexChanged(const QString &arg
 void VentesCreditEditWindow::on_pushButton_clicked()
 {
     QSqlQuery query=this->parent->getDatabase()->getDB().exec("update ventes set paye='"+QString::number(m_paye)+"',quantite='"+QString::number(m_quantite)+"' where idProduit='"+QString::number(m_produitID)+"' and idClient='"+QString::number(m_clientID)+"'");
-    QMessageBox::information(this,"Credit","Modifié!");
+    QMessageBox::information(this,"Credit","Modifie!");
     this->parent->setLastDateModified();
     this->close();
 }
